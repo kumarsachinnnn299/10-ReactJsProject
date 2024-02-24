@@ -1,0 +1,7 @@
+Steps to link existing repo to Github Repo:
+
+1) Create an empty repo on github wihout even readme
+2) Follow instruction which are given on opening the repo
+3) add remote origin in folder after git init
+4) pull
+5) then push all after commting
