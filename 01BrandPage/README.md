@@ -4,4 +4,4 @@ This project is made to practice and strengthen my ReactJS skills.
 ### Design Link: [Here](https://www.figma.com/file/rephrU2FVgN8MFz6XhnP51/Learn-React-with-10-Projects?type=design&node-id=0-1&mode=design)
 
 ## Preview of Page
-![plot](./public/Preview.png)
+![Preview](./public/Preview.png)

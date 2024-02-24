@@ -1,8 +1,11 @@
-# React + Vite
+# [AboutUs](https://www.youtube.com/watch?v=hrHIzqyq06U&list=PLPppPPmk0i3j_DW1T-UbryDVhBDgaAfEp)
+This project is made to practice and strengthen my ReactJS skills.
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+### Design Link: [Here](https://www.figma.com/file/rephrU2FVgN8MFz6XhnP51/Learn-React-with-10-Projects?type=design&node-id=2-5&t=HfzxeipioOu1jOmh-0)
 
-Currently, two official plugins are available:
+## Preview of Page
+![Preview](./public/Preview.png)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## New Techstack used
+* [React icon pack](https://react-icons.github.io/react-icons/) installed through ```
+  npm i react-icons```
