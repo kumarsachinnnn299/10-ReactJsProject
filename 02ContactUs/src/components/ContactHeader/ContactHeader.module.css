@@ -6,3 +6,7 @@
 .contact_section p{
     font-family: 500;
 }
+.contact_section{
+    max-width: 1000px;
+    margin: 0 auto;
+}
