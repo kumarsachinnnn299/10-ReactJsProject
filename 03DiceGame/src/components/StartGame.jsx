@@ -34,16 +34,16 @@ transition:0.4s background ease-in;
 }
 `
 
-function StartGame() {
+function StartGame({toggle}) {
   return (
     <Container>
         <div>
-        <img src="/public/images/dices.png"/>
+        <img src="/images/dices.png"/>
         </div>
    
       <div className='content'>
         <h1>Dice Game</h1>
-        <Button>Play Now</Button>
+        <Button onClick={toggle}>Play Now</Button>
       </div>
     </Container>
   )

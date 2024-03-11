@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import styled from  'styled-components'
 import StartGame from './components/StartGame'
+import GamePlay from './components/GamePlay'
 
 const Button=styled.button`
 background-color:black;
@@ -8,12 +9,15 @@ color:white;
 padding:10px
 `
 function App() {
-  const [count, setCount] = useState(0)
+  const [isGameStarted, setisGameStarted] = useState(true)
+  const toggleGamePlay=()=>{
+    setisGameStarted((prev)=>!prev);
+  }
 
   return (
     <>
 
-    <StartGame/>
+   {isGameStarted?<GamePlay/>:<StartGame toggle={toggleGamePlay}/>}
     </>
   )
 }
