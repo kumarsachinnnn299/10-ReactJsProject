@@ -9,7 +9,7 @@ color:white;
 padding:10px
 `
 function App() {
-  const [isGameStarted, setisGameStarted] = useState(true)
+  const [isGameStarted, setisGameStarted] = useState(false)
   const toggleGamePlay=()=>{
     setisGameStarted((prev)=>!prev);
   }
