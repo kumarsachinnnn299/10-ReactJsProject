@@ -1,12 +1,15 @@
 import { useEffect, useState } from 'react';
 import styled from 'styled-components'
+import SearchResult from './components/SearchResults/SearchResult';
 
-const BASE_URL="http://localhost:9000"
+export const BASE_URL="http://localhost:9000"
 
 const App = () => {
   const [data,setData]=useState(null);
   const [loading,setLoading]=useState(false)
   const [error,setError]=useState(null)
+  const [filteredData,setFilteredData]=useState(null)
+  const [selectedButton,setSelectedButton]=useState("all");
   
 
   useEffect(() => {
@@ -16,6 +19,7 @@ const App = () => {
         const response=await fetch(BASE_URL);
       const json=await response.json();
       setData(json);
+      setFilteredData(json)
       setLoading(false);
       } catch (error) {
           setError("Unalbe to fetch data")
@@ -24,44 +28,56 @@ const App = () => {
     fetchFoodData();
   },[])
   
+
+  const searchFood=(e)=>{
+    const searchValue=e.target.value;
+    if(searchValue==="")setFilteredData(null);
+    const filter=data?.filter((food=>food.name.toLowerCase().includes(searchValue.toLowerCase())));
+    setFilteredData(filter)
+  }
+
+  const filteredFood=(type)=>{
+    if(type==="all"){
+      setFilteredData(data);
+    setSelectedButton("all")
+  return
+}
+
+const filter=data?.filter((food=>food.type.toLowerCase().includes(type.toLowerCase())));
+setFilteredData(filter)
+setSelectedButton(type)
+
+  }
+
   if(error)return <div>{error}</div>
   if(loading)return <div>loading....</div>
  
-  return <Container>
+  return( 
+  <>
+  <Container>
     <TopContainer>
       <div className="logo">
         <img src='/images/logo.svg' alt='logo'/>
       </div>
 
       <div className="search">
-        <input type="text"
+        <input onChange={searchFood} type="text"
         placeholder='Search Food' />
       </div>
     </TopContainer>
     <FilterContainer>
-      <Button>All</Button>
-      <Button>Breakfast</Button>
-      <Button>Lunch</Button>
-      <Button>Dinner</Button>
+      <Button onClick={()=>filteredFood("all")}>All</Button>
+      <Button onClick={()=>filteredFood("breakfast")}>Breakfast</Button>
+      <Button onClick={()=>filteredFood("lunch")}>Lunch</Button>
+      <Button onClick={()=>filteredFood("dinner")}>Dinner</Button>
     </FilterContainer>
-    <FoodCardContainer>
-      <FoodCards>
-
-      </FoodCards>
-    </FoodCardContainer>
-
   </Container>;
+  <SearchResult data={filteredData}/>
+  </>
+  )
 };
 
-const FoodCardContainer=styled.section `
-  height:calc(100vh - 210px);
-  background-image:url("/images/bg.png");
-  background-size:cover;
-`
 
-const FoodCards=styled.div`
-
-`
 
 const FilterContainer=styled.section`
   display:flex;
@@ -70,21 +86,25 @@ const FilterContainer=styled.section`
   padding-bottom:40px;
 `
 
-const Button=styled.button`
+export const Button=styled.button`
 background:#ff4343;
 border-radius:5px;
 padding:6px 12px;
 border:none;
 color:white;
+cursor:pointer;
+&:hover{
+  baclground-color:#f22f2f;
+}
 `
 
-const Container=styled.div`
+export const Container=styled.div`
   max-width:1200px;
   margin :0 auto;
 `
 
 const TopContainer=styled.section`
-  min-height:140px;
+  height:140px;
   display:flex;
   justify-content:space-between;
   padding:16px;
@@ -99,6 +119,11 @@ const TopContainer=styled.section`
       font-size:16px;
       padding:10px;
     }
+  }
+
+  @media (0< width < 600px){
+    flex-direction:colimn;
+    height:120px
   }
 `
 
