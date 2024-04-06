@@ -10,3 +10,8 @@ This project is made to practice and strengthen my ReactJS skills. Firebase used
 * Tailwind Css
 * Firebase
 * React icon pack
+* Formik Library (To handle form data)
+
+## New Things Learnt
+* Modal Creation
+* Using Portal facilty to manage modal
