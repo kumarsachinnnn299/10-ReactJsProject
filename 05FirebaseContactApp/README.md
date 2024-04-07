@@ -15,3 +15,4 @@ This project is made to practice and strengthen my ReactJS skills. Firebase used
 ## New Things Learnt
 * Modal Creation
 * Using Portal facilty to manage modal
+* React Toastify
