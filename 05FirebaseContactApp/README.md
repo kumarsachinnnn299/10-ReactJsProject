@@ -4,7 +4,7 @@ This project is made to practice and strengthen my ReactJS skills. Firebase used
 ### Design Link: [Here](https://www.figma.com/file/rephrU2FVgN8MFz6XhnP51/Learn-React-with-10-Projects?type=design&node-id=864-52&mode=design&t=bHBqhJjM3FU2QrqI-0)
 
 ## Preview of Page
-![Preview1](app/public/images/Preview.png)
+![Preview1](./public/Preview.png)
 
 ## New Techstack used
 * Tailwind Css
@@ -16,3 +16,4 @@ This project is made to practice and strengthen my ReactJS skills. Firebase used
 * Modal Creation
 * Using Portal facilty to manage modal
 * React Toastify
+* [Yup schema builder](https://www.npmjs.com/package/yup)
