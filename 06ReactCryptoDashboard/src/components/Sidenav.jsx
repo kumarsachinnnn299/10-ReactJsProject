@@ -16,7 +16,10 @@ const Sidenav = () => {
     },
   ];
   return (
-    <Stack justify="space-between"  boxShadow="lg" w="256px" h="100vh">
+    <Stack bg="white" justify="space-between"  boxShadow={{base:"none", lg:"lg"}} w={{base:"full",lg:"16rem"}} h="100vh" 
+   
+
+    >
       {/* stack is display flex + flex direction column */}
       <Box >
         <Heading textAlign="center" pt="56px" fontSize="20px" as="h1">

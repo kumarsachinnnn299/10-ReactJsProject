@@ -10,15 +10,19 @@ import {
   Box,
   Icon
 } from "@chakra-ui/react";
-import { FaCircleUser } from "react-icons/fa6";
-const Topnav = () => {
+import { FaBars, FaCircleUser } from "react-icons/fa6";
+const Topnav = ({title,onOpen}) => {
   return (
-    <Box >
-      <HStack maxW="80rem"  h="16" justify="space-between" px="32" mx="auto">
-        <Heading fontWeight="medium" fontSize="28px">Dashboard</Heading>
-        <Menu>
-          <MenuButton as={Button}>
-            <Icon as={FaCircleUser} fontSize="24px"/>
+    <Box bg="white">
+      <HStack maxW="70rem"  h="16" justify="space-between"  mx="auto">
+        <Icon as={FaBars} onClick={onOpen} display={{
+          base:"block",
+          lg:"none"
+        }}/>
+        <Heading fontWeight="medium" fontSize="28px">{title}</Heading>
+        <Menu  >
+          <MenuButton as={Button} bg="white">
+            <Icon as={FaCircleUser} fontSize="24px" />
           </MenuButton>
 
           <MenuList>
